@@ -12,6 +12,11 @@ class App extends Component {
 
   }
 
+  handleChange(event) {
+    console.log("hello World");
+  }
+
+
   componentDidMount(){
     fetch("https://api.otreeba.com/v1/strains")
     .then(res => res.json())
@@ -44,15 +49,31 @@ class App extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
+        <select onChange={this.handleChange} >
           {items.map(item =>(
-            <li key={item.name}> 
-              {item.name} 
-              <img src={item.image}></img>
+            <option key={item.name} value={item}>
+              {item.name}
 
-            </li>
+            </option>
+
           ))}
-        </ul>
+        </select>
+
+
+
+
+
+
+
+        // <ul>
+        //   {items.map(item =>(
+        //     <li key={item.name}>
+        //       {item.name}
+        //       <img src={item.image}></img>
+        //
+        //     </li>
+        //   ))}
+        // </ul>
       );
     }
   }
