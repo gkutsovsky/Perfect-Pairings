@@ -18,7 +18,7 @@ class Home extends Component {
     // } else {
       return (
         <div>
-          <select onChange={e => this.handleChange(e)}>
+          <select defaultValue={JSON.stringify(items[0])} onChange={e => this.handleChange(e)}>
             {items.map(item =>(
                 <option name={JSON.stringify(item)} key={item.name} value={JSON.stringify(item)}>
                 {item.name}

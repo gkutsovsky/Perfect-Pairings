@@ -1,5 +1,7 @@
 import React from 'react'
+import { getRandomDescription } from './Descriptions'
 import './Pairings.css';
+
 
 function chooseImage(currentItem) {
   if (currentItem.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
@@ -19,7 +21,7 @@ const Pairings = ({ currentItem }) => {
       <div class = "lineage">
       <h3 class = "subtitle">Parental Lineage</h3>
       {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div>{key}</div>)}
-      <h3 class = 'subtitle"'>Why we like it</h3>  <h3 class= "description">Earthy flavors soured by skunky, fruity notes arrive on the inhale, making their exit with the taste of hashy spice.  </h3>
+      <h3 class = 'subtitle"'>Why we like it</h3>  <h3 class= "description">{getRandomDescription()}</h3>
       </div>
       </div>
 
@@ -27,5 +29,7 @@ const Pairings = ({ currentItem }) => {
     </div>
   )
 }
+
+
 
 export default Pairings
