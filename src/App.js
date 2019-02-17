@@ -1,61 +1,68 @@
 import React, { Component } from 'react';
+import { Router, Link, Route } from 'react-router-dom';
+import axios from 'axios';
+import history from './history';
+import Home from './Pages/Home';
+import Pairings from './Pages/Pairings';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    };
-
+  state = {
+    items: [],
+    currentItem: {},
+    isLoaded: false,
+    error: null,
   }
 
-  componentDidMount(){
-    fetch("https://api.otreeba.com/v1/strains")
-    .then(res => res.json())
-    .then(
-      (result) => {
-        console.log(result)
-        this.setState({
-          isLoaded: true,
-          items: result.data
-        });
-      },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
-      (error) => {
-        this.setState({
-          isLoaded: true,
-          error
-        });
-      }
-    )
+  async componentDidMount(){
+    const { data } = await axios.get("https://api.otreeba.com/v1/strains")
+    console.log(data)
+    this.setState({ items: data.data })
+    // fetch("https://api.otreeba.com/v1/strains")
+    // .then(
+    //   (result) => {
+    //     console.log(result)
+    //     this.setState({
+    //       isLoaded: true,
+    //       items: result.data
+    //     });
+    //   },
+    //   // Note: it's important to handle errors here
+    //   // instead of a catch() block so that we don't swallow
+    //   // exceptions from actual bugs in components.
+    //   (error) => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       error
+    //     });
+    //   }
+    // )
   }
 
+  getCurrentItem = item => {
+    console.log(item)
+    this.setState({ currentItem: item })
+  }
 
   render() {
-    const { error, isLoaded, items } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
+    console.log(history)
+    const { items, isLoaded, error, currentItem } = this.state
       return (
-        <ul>
-          {items.map(item =>(
-            <li key={item.name}> 
-              {item.name} 
-              <img src={item.image}></img>
+        <Router history={history}>
+          <div>
+            <div>
+              <Link to="/">Home</Link>
+              <Link to="/pairings">Pairing</Link>
+            </div>
+            <div>
+              <Route exact path="/" render={() => <Home history={history} getCurrentItem={this.getCurrentItem} items={items} isLoaded={isLoaded} error={error} />} />
+              <Route path="/pairings" render={() => <Pairings currentItem={currentItem} />} />
+            </div>
+          </div>
+        </Router>
 
-            </li>
-          ))}
-        </ul>
       );
     }
   }
-}
 
 export default App;
