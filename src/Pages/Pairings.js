@@ -1,4 +1,5 @@
 import React from 'react'
+import './Pairings.css';
 
 function chooseImage(currentItem) {
   if (currentItem.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
@@ -13,10 +14,13 @@ const Pairings = ({ currentItem }) => {
   return(
     <div>
       <img src={chooseImage(currentItem)} />
-      <h3>{currentItem.name}</h3>
+        <div class = "placement">
+      <h3 class = "name">{currentItem.name}</h3>
       <div class = "lineage">
-      <h3>Parental Lineage</h3>
+      <h3 class = "subtitle">Parental Lineage</h3>
       {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div>{key}</div>)}
+      <h3 class = 'subtitle"'>Why we like it</h3>  <h3 class= "description">Earthy flavors soured by skunky, fruity notes arrive on the inhale, making their exit with the taste of hashy spice.  </h3>
+      </div>
       </div>
 
 
