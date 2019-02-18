@@ -1,7 +1,7 @@
 import React from 'react'
 import { getRandomDescription } from './Descriptions'
 import './Pairings.css';
-import { getRandomBeautyShots} from './Beautyshots'
+import { getRandomBeautyShots } from './Beautyshots'
 
 
 function chooseImage(currentItem) {

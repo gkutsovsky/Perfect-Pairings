@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
+import './Home.css';
+
+
+
 
 class Home extends Component {
   handleChange(e){
