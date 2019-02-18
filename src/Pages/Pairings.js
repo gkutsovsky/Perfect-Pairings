@@ -1,6 +1,7 @@
 import React from 'react'
 import { getRandomDescription } from './Descriptions'
 import './Pairings.css';
+import { getRandomBeautyShots} from './Beautyshots'
 
 
 function chooseImage(currentItem) {
@@ -22,10 +23,10 @@ const Pairings = ({ currentItem }) => {
       <h3 class = "subtitle">Parental Lineage</h3>
       {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div>{key}</div>)}
       <h3 class = 'subtitle"'>Why we like it</h3>  <h3 class= "description">{getRandomDescription()}</h3>
+
       </div>
       </div>
-
-
+      <img src={getRandomBeautyShots()} alt="beauty shots"></img>
     </div>
   )
 }
