@@ -49,11 +49,16 @@ class App extends Component {
     const { items, isLoaded, error, currentItem } = this.state
       return (
         <Router history={history}>
-          <div>
-            <div>
+
+          <div class = "navigation">
+             <div id = "home">
               <Link to="/">Home</Link>
+              </div>
+              <div id = "pairings">
               <Link to="/pairings">Pairing</Link>
-            </div>
+              </div>
+
+
             <div>
               <Route exact path="/" render={() => <Home history={history} getCurrentItem={this.getCurrentItem} items={items} isLoaded={isLoaded} error={error} />} />
               <Route path="/pairings" render={() => <Pairings currentItem={currentItem} />} />
