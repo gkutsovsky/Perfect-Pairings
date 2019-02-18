@@ -24,6 +24,14 @@
   color: #61dafb;
 }
 
+.navigation{
+  display: inline;
+  font-family: monospace;
+  border-radius: 45%;
+
+}
+
+
 select {
   display: inline;
   border-style: solid;
