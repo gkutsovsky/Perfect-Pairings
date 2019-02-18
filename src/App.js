@@ -18,25 +18,7 @@ class App extends Component {
     const { data } = await axios.get("https://api.otreeba.com/v1/strains")
     console.log(data)
     this.setState({ items: data.data })
-    // fetch("https://api.otreeba.com/v1/strains")
-    // .then(
-    //   (result) => {
-    //     console.log(result)
-    //     this.setState({
-    //       isLoaded: true,
-    //       items: result.data
-    //     });
-    //   },
-    //   // Note: it's important to handle errors here
-    //   // instead of a catch() block so that we don't swallow
-    //   // exceptions from actual bugs in components.
-    //   (error) => {
-    //     this.setState({
-    //       isLoaded: true,
-    //       error
-    //     });
-    //   }
-    // )
+  
   }
 
   getCurrentItem = item => {

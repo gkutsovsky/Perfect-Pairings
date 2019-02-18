@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import './Home.css';
-
+import './Titlepage'
 
 
 
@@ -15,11 +15,7 @@ class Home extends Component {
 
   render() {
     const { error, isLoaded, items } = this.props;
-    // if (error) {
-    //   return <div>Error: {error.message}</div>;
-    // } else if (!isLoaded) {
-    //   return <div>Loading...</div>;
-    // } else {
+
       return (
         <div>
           <select defaultValue={JSON.stringify(items[0])} onChange={e => this.handleChange(e)}>
@@ -31,8 +27,11 @@ class Home extends Component {
           </select>
         </div>
 
+      
+
       );
     // }
+
   }
 }
 
