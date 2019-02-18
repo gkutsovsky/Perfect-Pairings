@@ -50,8 +50,8 @@ class App extends Component {
       return (
         <Router history={history}>
 
-          <div class = "navigation">
-             <div id = "home">
+          <div className = "navigation">
+          <div id = "home">
               <Link to="/">Home</Link>
               </div>
               <div id = "pairings">
