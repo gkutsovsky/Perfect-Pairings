@@ -22,8 +22,8 @@ class Home extends Component {
           <div id = "dropdown">
             <select defaultValue={JSON.stringify(items[0])} onChange={e => this.handleChange(e)}>
               {
-                items.map(item =>(
-                  <option name={JSON.stringify(item)} key={item.name} value={JSON.stringify(item)}>
+                items.map((item, index) =>(
+                  <option name={JSON.stringify(item)} key={item.name} value={index}>
                   {item.name}
                   </option>
                 ))
