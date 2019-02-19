@@ -36,7 +36,9 @@ class App extends Component {
 
           <div className = "navigation">
           <div id = "home">
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <img src="https://static.thenounproject.com/png/625605-200.png" width="80"/>
+              </Link>
               </div>
               <div id = "pairings">
               <Link to="/pairings">Pairing</Link>

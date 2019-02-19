@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre');
+
 /* img {
   min-width: 200px;
   height: 300px;
@@ -5,26 +7,27 @@
 } */
 
 .pairing-image {
-  height: 300px;
-  min-width: 200px;
+  height: 350px;
+  min-width: 250px;
   background-color: hotpink;
 }
 
 #stuff {
   padding: 20px;
-  background-color: rgba(200,  200, 200,);
+  background-color: rgba(200,  200, 200, 0.6);
   margin: auto 40px;
   font-weight: bold;
 }
 
 .Lineage {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .name {
   font-family: "Proza Libre";
-  font-size: 18px;
+  font-size: 36px;
   font-weight: bold;
+  margin-bottom: 12px;
 }
 .parentalLineage {
   font-family: "Proza Libre";
@@ -44,5 +47,6 @@
 .why {
   font-family: "Proza Libre";
   font-size: 18px;
+  margin-top: 20px;
 
 }

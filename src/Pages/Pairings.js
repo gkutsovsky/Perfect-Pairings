@@ -36,10 +36,8 @@ const Pairings = ({ currentItem }) => {
         <h3 className = "name">{currentItem.name}</h3>
         <div classname = "Lineage">
           <h4>Parental Lineage</h4>
-          {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div key={key}>{key}</div>)}
-          <h4>Why we like it</h4>
-          <h4> {getRandomDescription()}</h4>
-
+          {currentItem.lineage && Object.keys(currentItem.lineage).join(', ')}
+          <h4 className="why"> {getRandomDescription()}</h4>
           </div>
       </div>
       <div className="pairing-image" style={ rightImg }></div>
