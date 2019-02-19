@@ -5,6 +5,11 @@ img {
   object-fit: cover;
 }
 
+#stuff {
+  padding: 20px;
+  background-color: rgba(200,  200, 200, 0.5);
+  margin: auto 40px;
+}
 
 .name {
   font-family: "Proza Libre";

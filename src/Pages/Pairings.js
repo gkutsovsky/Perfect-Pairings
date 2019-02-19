@@ -7,10 +7,13 @@ const display = {
   display: 'flex',
   flexDirection: 'row',
   align: 'center',
-
-
-
+  padding: '100px',
 }
+
+
+
+
+
 
 
 function chooseImage(currentItem) {
@@ -25,17 +28,16 @@ function chooseImage(currentItem) {
 const Pairings = ({ currentItem }) => {
   return(
     <div style={display}>
-      <img
-        src={chooseImage(currentItem)}
-        width="200px"
-      />
-      <div className = "placement">
+      <img src={chooseImage(currentItem)} width="200px"/>
+      <div id = "stuff">
         <h3 className = "name">{currentItem.name}</h3>
-        <div className = "lineage">
-          <h3 className = "parentalLineage">Parental Lineage</h3>
-          {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div>{key}</div>)}
-          <h3 className = 'subtitle'>Why we like it</h3>  <h3 class= "description">{getRandomDescription()}</h3>
-        </div>
+        <div>
+          <h4 className = "parentalLineage">Parental Lineage</h4>
+          {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div key={key}>{key}</div>)}
+          <h4 className = 'why'>Why we like it</h4>
+          <h4 className= "description"> {getRandomDescription()}</h4>
+
+          </div>
       </div>
       <img
         src={getRandomBeautyShots()}
