@@ -1,34 +1,31 @@
-
-
-
 img {
   width: 300px;
   height: 300px;
   margin: 100px;
 }
 
+
+.name {
+  font-family: "Proza Libre";
+  font-size: 18px;
+}
 .parentalLineage {
   font-family: "Proza Libre";
-  fotn-size: 18px;
-}
-
-
-/*
-.name{
-  font-family: monospace;
-  font-size: 32px
-
-}
-
-.subtitle{
-  font-family: monospace;
-  font-size: 24px;
-  display: inline;
-  padding-bottom: 25px;
-}
-
-.lineage{
-  font-family: monospace;
   font-size: 18px;
-  display: inline;
-} */
+}
+
+.subtitle {
+  font-family: "Proza Libre";
+  font-size: 18px;
+}
+
+.description {
+  font-family: "Proza Libre";
+  font-size: 18px;
+}
+
+.why {
+  font-family: "Proza Libre";
+  font-size: 18px;
+
+}
