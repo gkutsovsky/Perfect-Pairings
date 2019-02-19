@@ -1,10 +1,20 @@
-img {
-  width: 200px;
+/* img {
+  min-width: 200px;
   height: 300px;
-  margin: 100px;
   object-fit: cover;
+} */
+
+.pairing-image {
+  height: 300px;
+  min-width: 200px;
+  background-color: hotpink;
 }
 
+#stuff {
+  padding: 20px;
+  background-color: rgba(200,  200, 200, 0.5);
+  margin: auto 40px;
+}
 
 .name {
   font-family: "Proza Libre";

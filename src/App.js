@@ -18,12 +18,14 @@ class App extends Component {
     const { data } = await axios.get("https://api.otreeba.com/v1/strains")
     console.log(data)
     this.setState({ items: data.data })
-  
   }
 
-  getCurrentItem = item => {
+  getCurrentItem = (item, newPath) => {
     console.log(item)
-    this.setState({ currentItem: item })
+    this.setState({
+      currentItem: item },
+      () => { history.push('/pairings')
+    })
   }
 
   render() {
