@@ -4,8 +4,12 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
-.dropdown {
+.homepage {
+  align: center;
+}
 
+#dropdown {
+  align: center;
 }
 
 .feed {

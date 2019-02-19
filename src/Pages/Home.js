@@ -4,7 +4,6 @@ import './Home.css';
 import './Titlepage'
 
 
-
 class Home extends Component {
   handleChange(e){
     const { getCurrentItem, history } = this.props;
@@ -18,10 +17,10 @@ class Home extends Component {
       return (
         <div className = "homepage">
         <div className = "title">
-        <p className = "perfect">Perfect Pairings.</p>
-         <p className = "feed"> Feed Your Senses.</p>
+        <p>Perfect Pairings.</p>
+         <p> Feed Your Senses.</p>
         </div>
-        <div className = "dropdown">
+        <div id = "dropdown">
           <select defaultValue={JSON.stringify(items[0])} onChange={e => this.handleChange(e)}>
             {items.map(item =>(
                 <option name={JSON.stringify(item)} key={item.name} value={JSON.stringify(item)}>
