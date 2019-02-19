@@ -12,12 +12,16 @@ class Home extends Component {
     history.push('/pairings')
   }
 
-
   render() {
     const { error, isLoaded, items } = this.props;
 
       return (
-        <div>
+        <div className = "homepage">
+        <div className = "title">
+        <p className = "perfect">Perfect Pairings.</p>
+         <p className = "feed"> Feed Your Senses.</p>
+        </div>
+        <div className = "dropdown">
           <select defaultValue={JSON.stringify(items[0])} onChange={e => this.handleChange(e)}>
             {items.map(item =>(
                 <option name={JSON.stringify(item)} key={item.name} value={JSON.stringify(item)}>
@@ -27,7 +31,10 @@ class Home extends Component {
           </select>
         </div>
 
-      
+
+        </div>
+
+
 
       );
     // }
