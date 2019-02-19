@@ -12,13 +12,19 @@
 
 #stuff {
   padding: 20px;
-  background-color: rgba(200,  200, 200, 0.5);
+  background-color: rgba(200,  200, 200,);
   margin: auto 40px;
+  font-weight: bold;
+}
+
+.Lineage {
+  font-weight: bold;
 }
 
 .name {
   font-family: "Proza Libre";
   font-size: 18px;
+  font-weight: bold;
 }
 .parentalLineage {
   font-family: "Proza Libre";
