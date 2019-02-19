@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { getRandomDescription } from './Descriptions'
 import './Pairings.css';
 import { getRandomBeautyShots } from './Beautyshots'
@@ -24,30 +24,40 @@ const rightImg = {
                     backgroundSize: "cover"
                   }
 
-const Pairings = ({ currentItem }) => {
-  return(
-    <div style={display}>
-      <div className="pairing-image"
-           style={
-                  { backgroundImage: `url(${chooseImage(currentItem)})`,
-                    backgroundSize: "cover" }
-                 }></div>
-      <div id = "stuff">
-        <h3 className = "name">{currentItem.name}</h3>
-        <div classname = "Lineage">
-          <h4>Parental Lineage</h4>
-          {currentItem.lineage && Object.keys(currentItem.lineage).join(', ')}
-          <h4 className="why"> {getRandomDescription()}</h4>
+export default class Pairings extends React.Component {
+
+  changeCurrentItem = e => {
+    e.preventDefault()
+    this.props.changeCurrentItem( Number(this.props.match.params.id) + 1 )
+  }
+
+  render(){
+    let { currentItem } = this.props
+    return(
+      <Fragment>
+        <div style={display}>
+          <div className="pairing-image"
+               style={
+                      { backgroundImage: `url(${chooseImage(currentItem)})`,
+                        backgroundSize: "cover" }
+                     }></div>
+          <div id = "stuff">
+            <h3 className = "name">{currentItem.name}</h3>
+            <div className = "Lineage">
+              <h4>Parental Lineage</h4>
+              {currentItem.lineage && Object.keys(currentItem.lineage).join(', ')}
+              <h4 className="why"> {getRandomDescription()}</h4>
+              </div>
           </div>
-      </div>
-      <div className="pairing-image" style={ rightImg }></div>
-    </div>
-  )
+          <div className="pairing-image" style={ rightImg }></div>
+
+        </div>
+        <a href="#" onClick={this.changeCurrentItem}>Go to Next Pairing</a>
+      </Fragment>
+    )
+  }
 }
 
-
-
-export default Pairings
 
     // <img src={chooseImage(currentItem)}/>
     // <img

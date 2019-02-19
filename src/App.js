@@ -20,12 +20,16 @@ class App extends Component {
     this.setState({ items: data.data })
   }
 
-  getCurrentItem = (item, newPath) => {
-    console.log(item)
+  getCurrentItem = (itemIndex, newPath) => {
     this.setState({
-      currentItem: item },
-      () => { history.push('/pairings')
+      currentItem: this.state.items[itemIndex] },
+      () => { history.push(`/pairings/${itemIndex}`)
     })
+  }
+
+  changeCurrentItem = index => {
+    this.setState({ currentItem: this.state.items[index] })
+    history.push(`/pairings/${index}`)
   }
 
   render() {
@@ -37,7 +41,7 @@ class App extends Component {
           <div className = "navigation">
           <div id = "home">
               <Link to="/">
-                <img src="https://static.thenounproject.com/png/625605-200.png" width="80"/>
+                <img src="https://cdn3.iconfinder.com/data/icons/nature-emoji/50/Marijuana-512.png" width="80"/>
               </Link>
               </div>
               <div id = "pairings">
@@ -47,7 +51,7 @@ class App extends Component {
 
             <div>
               <Route exact path="/" render={() => <Home history={history} getCurrentItem={this.getCurrentItem} items={items} isLoaded={isLoaded} error={error} />} />
-              <Route path="/pairings" render={() => <Pairings currentItem={currentItem} />} />
+              <Route path="/pairings/:id" render={ props => <Pairings {...props} key={currentItem.name} currentItem={currentItem} changeCurrentItem={this.changeCurrentItem} />} />
             </div>
           </div>
         </Router>
