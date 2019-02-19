@@ -34,11 +34,11 @@ const Pairings = ({ currentItem }) => {
                  }></div>
       <div id = "stuff">
         <h3 className = "name">{currentItem.name}</h3>
-        <div>
-          <h4 className = "parentalLineage">Parental Lineage</h4>
+        <div classname = "Lineage">
+          <h4>Parental Lineage</h4>
           {currentItem.lineage && Object.keys(currentItem.lineage).map(key => <div key={key}>{key}</div>)}
-          <h4 className = 'why'>Why we like it</h4>
-          <h4 className= "description"> {getRandomDescription()}</h4>
+          <h4>Why we like it</h4>
+          <h4> {getRandomDescription()}</h4>
 
           </div>
       </div>
