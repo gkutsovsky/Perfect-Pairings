@@ -10,14 +10,8 @@ const display = {
   padding: '100px',
 }
 
-
-
-
-
-
-
 function chooseImage(currentItem) {
-  if (currentItem.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
+  if (currentItem.image === "https://www.cannabisreports.com/images/strains/no_image.png" || currentItem.image === undefined ) {
     return "https://magazine.grasscity.com/wp-content/uploads/2016/02/How-To-Harvest-Outdoor-Marijuana-Plants-720x480@2x.jpg";
   }
   else {
@@ -25,10 +19,19 @@ function chooseImage(currentItem) {
   }
 }
 
+const rightImg = {
+                    backgroundImage: `url(${getRandomBeautyShots()})`,
+                    backgroundSize: "cover"
+                  }
+
 const Pairings = ({ currentItem }) => {
   return(
     <div style={display}>
-      <img src={chooseImage(currentItem)} width="200px"/>
+      <div className="pairing-image"
+           style={
+                  { backgroundImage: `url(${chooseImage(currentItem)})`,
+                    backgroundSize: "cover" }
+                 }></div>
       <div id = "stuff">
         <h3 className = "name">{currentItem.name}</h3>
         <div>
@@ -39,11 +42,7 @@ const Pairings = ({ currentItem }) => {
 
           </div>
       </div>
-      <img
-        src={getRandomBeautyShots()}
-        alt="beauty shots"
-        width="200px"
-      />
+      <div className="pairing-image" style={ rightImg }></div>
     </div>
   )
 }
@@ -51,3 +50,9 @@ const Pairings = ({ currentItem }) => {
 
 
 export default Pairings
+
+    // <img src={chooseImage(currentItem)}/>
+    // <img
+    //   src={getRandomBeautyShots()}
+    //   alt="beauty shots"
+    //   />

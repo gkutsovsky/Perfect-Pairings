@@ -1,8 +1,13 @@
-img {
-  width: 200px;
+/* img {
+  min-width: 200px;
   height: 300px;
-  margin: 100px;
   object-fit: cover;
+} */
+
+.pairing-image {
+  height: 300px;
+  min-width: 200px;
+  background-color: hotpink;
 }
 
 #stuff {
