@@ -1,5 +1,43 @@
 body {
-background-image: url('http://i.imgur.com/KnILOI6.jpg');
+background-image: url('https://i.ibb.co/7CYf6Js/copy.jpg');
 background-repeat: no-repeat;
 background-size: cover;
+}
+
+.dropdown {
+
+}
+
+.feed {
+  margin-top: 0px;
+}
+
+/*@font-face {
+    font-family: 'shookupregular';
+    src: url('Shookup.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+.title{
+  /*font-family: 'shookupregular';*/
+font-family: "Proza Libre";
+  white-space: pre-wrap;
+  font-size: 72px;
+  text-align: center;
+  color: #59402A;
+  padding-bottom: 0px
+
+
+}
+
+.subtitle{
+  font-family: "Proza Libre";
+  font-size: 92px;
+  text-align: center;
+  color: #59402A;
+  padding-bottom: 0px
+
+
 }
