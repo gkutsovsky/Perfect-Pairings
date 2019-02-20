@@ -49,7 +49,7 @@ class App extends Component {
               </div>
 
 
-            <div>
+            <div id = "pairing">
               <Route exact path="/" render={() => <Home history={history} getCurrentItem={this.getCurrentItem} items={items} isLoaded={isLoaded} error={error} />} />
               <Route path="/pairings/:id" render={ props => <Pairings {...props} key={currentItem.name} currentItem={currentItem} changeCurrentItem={this.changeCurrentItem} />} />
             </div>
