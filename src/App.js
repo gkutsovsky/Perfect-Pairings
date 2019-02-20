@@ -28,8 +28,10 @@ class App extends Component {
   }
 
   changeCurrentItem = index => {
-    this.setState({ currentItem: this.state.items[index] })
-    history.push(`/pairings/${index}`)
+    let i = index
+    if (i >= this.state.items.length) i = 1
+    this.setState({ currentItem: this.state.items[i] })
+    history.push(`/pairings/${i}`)
   }
 
   render() {
