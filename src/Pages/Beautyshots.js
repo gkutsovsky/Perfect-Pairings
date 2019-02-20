@@ -2,5 +2,6 @@ const beautyShots = ["https://images.pexels.com/photos/46239/salmon-dish-food-me
 
 export const getRandomBeautyShots = () => {
   const randomIndex = Math.floor(Math.random() * beautyShots.length)
+  console.log(randomIndex)
   return beautyShots[randomIndex]
 }

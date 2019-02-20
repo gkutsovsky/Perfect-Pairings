@@ -28,8 +28,10 @@ class App extends Component {
   }
 
   changeCurrentItem = index => {
-    this.setState({ currentItem: this.state.items[index] })
-    history.push(`/pairings/${index}`)
+    let i = index
+    if (i >= this.state.items.length) i = 1
+    this.setState({ currentItem: this.state.items[i] })
+    history.push(`/pairings/${i}`)
   }
 
   render() {
@@ -49,7 +51,7 @@ class App extends Component {
               </div>
 
 
-            <div>
+            <div id = "pairing">
               <Route exact path="/" render={() => <Home history={history} getCurrentItem={this.getCurrentItem} items={items} isLoaded={isLoaded} error={error} />} />
               <Route path="/pairings/:id" render={ props => <Pairings {...props} key={currentItem.name} currentItem={currentItem} changeCurrentItem={this.changeCurrentItem} />} />
             </div>

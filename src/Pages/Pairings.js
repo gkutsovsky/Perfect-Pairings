@@ -49,7 +49,10 @@ export default class Pairings extends React.Component {
               <h4 className="why"> {getRandomDescription()}</h4>
               </div>
           </div>
-          <div className="pairing-image" style={ rightImg }></div>
+          <div className="pairing-image" style={{
+            backgroundImage: `url(${getRandomBeautyShots()})`,
+            backgroundSize: "cover"
+          }}></div>
 
         </div>
         <a href="#" onClick={this.changeCurrentItem}>Go to Next Pairing</a>
